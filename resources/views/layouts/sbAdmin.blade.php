@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
@@ -18,7 +19,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top" style="margin:0;background-color:white;">
+        <nav class="navbar navbar-default navbar-static-top"  style="margin:0 0;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -73,45 +74,41 @@
                 </div>
             </div>
         </nav>
-	</div>
-		
+	</div>	
+	
 	<div id="wrapper">
-		@guest
-		<div></div>
-		@else
-			<div class="left bar">
-				<div class="navbar-default sidebar" role="navigation">
-					<div class="sidebar-nav navbar-collapse">
-						<ul class="nav" id="side-menu">
-							<li>
-								<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-								<ul class="nav nav-second-level">
-									<li>
-										<a href="flot.html">Flot Charts</a>
-									</li>
-									<li>
-										<a href="morris.html">Morris.js Charts</a>
-									</li>
-								</ul>
-								<!-- /.nav-second-level -->
-							</li>
-						</ul>
-					</div>
-					<!-- /.sidebar-collapse -->
-				</div>
-			</div>
-		@endguest
-			
-		@yield('content')
+		<div class="left bar">
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+		</div>
+		
+        @yield('content')
 	</div>
 
     <!-- Scripts -->
+	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.js') }}"></script>
 	<script src="{{ asset('js/sb-admin-2.js') }}"></script>
 	<script src="{{ asset('js/metisMenu.min.js') }}"></script>
 </body>
