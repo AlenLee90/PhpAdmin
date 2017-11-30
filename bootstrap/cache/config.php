@@ -208,7 +208,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'admin',
+        'database' => 'homestead',
         'prefix' => '',
       ),
       'mysql' => 
@@ -216,7 +216,7 @@
         'driver' => 'mysql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'admin',
+        'database' => 'homestead',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -231,7 +231,7 @@
         'driver' => 'pgsql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'admin',
+        'database' => 'homestead',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -244,7 +244,7 @@
         'driver' => 'sqlsrv',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'admin',
+        'database' => 'homestead',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
