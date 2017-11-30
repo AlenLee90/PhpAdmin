@@ -56,6 +56,7 @@
 										<th>Comment</th>
 										<th>CreatedAt</th>
 										<th>UpdateAt</th>
+										<th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +71,7 @@
 										<td><?php echo e($data->comment); ?></td>
 										<td><?php echo e($data->created_at); ?></td>
 										<td><?php echo e($data->updated_at); ?></td>
+										<td></td>
                                     </tr>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
