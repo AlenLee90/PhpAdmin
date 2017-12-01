@@ -56,7 +56,7 @@
 										<th>Comment</th>
 										<th>CreatedAt</th>
 										<th>UpdateAt</th>
-										<th>Action</th>
+										<th data-orderable="false">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,7 +71,10 @@
 										<td>{{ $data->comment }}</td>
 										<td>{{ $data->created_at }}</td>
 										<td>{{ $data->updated_at }}</td>
-										<td></td>
+										<td>
+											<button type="button" class="btn btn-primary btn-xs">Edit</button>
+											<button type="button" class="btn btn-danger btn-xs">Delete</button>
+										</td>
                                     </tr>
 									@endforeach
                                 </tbody>
