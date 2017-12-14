@@ -108,14 +108,20 @@
 	<script src="{{ asset('js/metisMenu.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
-	<script src="{{ asset('js/dataTables.responsive.js') }}"></script>
-	
+	<script src="{{ asset('js/dataTables.responsive.js') }}"></script>	
 	<script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
             responsive: true
         });
     });
+	function deletePost(e) {
+		'use strict';
+ 
+		if (confirm('Are you sure to delete it?')) {
+			document.getElementById('form_' + e.dataset.id).submit();
+		}
+	}
     </script>
 </body>
 </html>

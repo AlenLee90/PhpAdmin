@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $datas = User::all();
+        return view('home')->with('datas',$datas);
+    }
+
+	public function delete($id)
+	{
+		$deleteData = User::findOrFail($id);
+		$deleteData->delete();
+ 
+		$datas = User::all();
+		return redirect()->route('home')->with('message', 'Succeed');
+	}
+	
+	public function edit(Request $request)
+    {
+		$results = User::updateData($request);
+		
+		$datas = User::all();
+        //return view('inputDetail')->with('message', '')->with('datas',$datas);
+		return redirect()->route('home')->with('message', 'Succeed');
     }
 }

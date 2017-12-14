@@ -22,3 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/inputDetail', 'InputDetailController@index')->name('inputDetail');
+
+Route::delete('inputDetail/delete/{id}', 'InputDetailController@delete');
+
+Route::get('inputDetail/inputDetailEdit','InputDetailController@edit');
+
+Route::get('home/userEdit','HomeController@edit');
+
+Route::delete('home/delete/{id}', 'HomeController@delete');

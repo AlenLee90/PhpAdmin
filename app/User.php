@@ -26,4 +26,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+	
+	public static function updateData($request){
+		$status = false;
+		try{
+			$user;
+			if(isset($request->id)){
+				$user = User::find($request->id);
+			}else{
+				$user = new User;	
+			}
+			$user->name = $request->name;
+			$user->email = $request->email;
+			$user->save();
+			$status = true;
+		}catch(Exception $e){
+			echo 'Message: ' .$e->getMessage();
+		}
+		return $status;
+	}
 }
