@@ -30,3 +30,5 @@ Route::get('inputDetail/inputDetailEdit','InputDetailController@edit');
 Route::get('home/userEdit','HomeController@edit');
 
 Route::delete('home/delete/{id}', 'HomeController@delete');
+
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
